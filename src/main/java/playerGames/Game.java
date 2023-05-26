@@ -7,7 +7,7 @@ public class Game {
     private List<Player> players = new ArrayList<>();
 
     public void register(Player player) {
-        if (!players.contains(player)) {
+         {
             players.add(player);
         }
     }

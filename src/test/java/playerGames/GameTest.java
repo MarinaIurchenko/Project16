@@ -1,4 +1,5 @@
 package playerGames;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -18,8 +19,8 @@ public class GameTest {
 
         players.add(new Player(234, "Матвей", 15));
         players.add(new Player(235, "Константин", 30));
-        players.add(new Player(336, "Максим", 20));
-        players.add(new Player(337, "Руслан", 15));
+        players.add(new Player(236, "Максим", 20));
+        players.add(new Player(237, "Руслан", 15));
 
         for (Player player : players) {
             game.register(player);
@@ -63,6 +64,15 @@ public class GameTest {
         Assertions.assertThrows(NotRegisteredException.class, () -> {
             game.round("Анатолий", "Эдуард");
         });
+    }
+
+    @Test
+    public void newRegisteredPlayer() {
+        Player player5 = new Player(238, "Олег", 50);
+
+        players.contains(player5);
+
+        Assertions.assertFalse(players.contains(player5));
     }
 
 }
